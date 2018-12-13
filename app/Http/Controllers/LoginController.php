@@ -12,7 +12,7 @@ class LoginController extends Controller
         $formdata = $request->formdata;
         if(Auth::attempt(['email' => $formdata['email'], 'password' => $formdata['password']])){
             $user = Auth::user();
-            $success['token'] =  $user->createToken('MyApp')->accessToken;
+            $success['token'] =  $user->createToken('EABeautyLine')->accessToken;
             return response()->json(['success' => $success], Response::HTTP_OK);
         }
         else{

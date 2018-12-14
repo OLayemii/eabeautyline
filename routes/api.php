@@ -19,5 +19,5 @@ use Illuminate\Http\Request;
 Route::post('/user/register', 'RegisterController@register');
 Route::post('/user/login', 'LoginController@login');
 Route::middleware('auth:api')->get('/checkauth', function(Request $request){
-    return $request;
+    return "Authenticated";
 });
